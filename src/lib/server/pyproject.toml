@@ -10,6 +10,7 @@ dependencies = [
     "gradio>=5.30.0",
     "huggingface-hub>=0.31.4",
     "langchain>=0.3.25",
+    "langchain-community>=0.3.24",
     "langchain-core>=0.3.60",
     "langchain-huggingface>=0.2.0",
     "langchain-openai>=0.3.17",
