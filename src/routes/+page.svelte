@@ -2,27 +2,27 @@
   import arrowIcon from "$lib/assets/arrow-up.svg";
   import SentenceBox from "./SentenceBox.svelte";
 
-  let text = "";
+  let userMessage = "";
   let responseMessage = "";
   let textRequest = "";
   let is_loading = false;
   let conversations = [];
-  const API_BASE_URL = "/api";
+  const API_BASE_URL = "http://127.0.0.1:8001";
 
   async function askLLM() {
     is_loading = true; // prevent duplicate inputs
 
-    if (!text.trim()) {
+    if (!userMessage.trim()) {
       return;
     }
-    conversations = [...conversations, ["user", text]];
+    conversations = [...conversations, ["user", userMessage]];
     document.getElementById("input-area").value = "";
 
     // JSON Request
     textRequest = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ text: text }),
+      body: JSON.stringify({ message: userMessage }),
     };
 
     conversations = [...conversations, ["loading", "검색 중..."]];
@@ -33,15 +33,35 @@
     // Fetch response from API
     const response = await fetch(`${API_BASE_URL}/answer`, textRequest);
 
-    if (response.ok) {
-      responseMessage = await response.json();
-      responseMessage = responseMessage.text;
-      // console.log(responseMessage);
+    responseMessage = ""; // init
+    conversations = [...conversations.slice(0, -1), ["llm", responseMessage]];
+
+    if (response.ok && response.body) {
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder("utf-8");
+
+      let lastRender = Date.now(); // prevent overhead
+      let sleepTime = 50;
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+
+        const chunk = decoder.decode(value, { stream: true });
+        responseMessage += chunk;
+        conversations[conversations.length - 1][1] = responseMessage;
+
+        if (Date.now() - lastRender > sleepTime) {
+          // force svelte to render on the user screen
+          conversations = [...conversations];
+          lastRender = Date.now();
+        }
+      }
     } else {
       responseMessage = "오류: 요청을 받을 수 없는 상태입니다.";
+      conversations = [...conversations.slice(0, -1), ["llm", responseMessage]];
     }
 
-    conversations = [...conversations.slice(0, -1), ["llm", responseMessage]];
     is_loading = false;
   }
 
@@ -66,7 +86,10 @@
 
 <div id="floating-box">
   <div id="input-container">
-    <textarea id="input-area" bind:value={text} placeholder="무엇이 궁금한가요?"
+    <textarea
+      id="input-area"
+      bind:value={userMessage}
+      placeholder="무엇이 궁금한가요?"
     ></textarea>
     <button onclick={askLLM} onkeydown={handleKeydown} disabled={is_loading}
       ><img src={arrowIcon} alt="submit" /></button

@@ -11,11 +11,19 @@
     padding: 8px;
     margin: 8px;
     border-radius: 4px;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .sentence-box > pre {
     line-height: 1.5;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
   .user {
     background-color: var(--gray-700);
     font-weight: bold;
+    margin-top: 16px;
   }
   .loading {
     animation: fadeAnimation 1.5s infinite alternate;
