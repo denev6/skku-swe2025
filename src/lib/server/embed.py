@@ -60,6 +60,6 @@ if __name__ == "__main__":
 
     ENCODER_MODEL = os.getenv("ENCODER_MODEL")
     FAISS_INDEX = os.getenv("FAISS_INDEX")
-    DIR_PATH = "data"
+    DIR_PATH = "sample"
 
     embed(ENCODER_MODEL, DIR_PATH, FAISS_INDEX)
