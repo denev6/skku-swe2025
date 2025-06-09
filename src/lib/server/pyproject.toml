@@ -16,6 +16,7 @@ dependencies = [
     "langchain-openai>=0.3.17",
     "langchain-text-splitters>=0.3.8",
     "numpy>=2.2.6",
+    "pytest>=8.4.0",
     "python-dotenv>=1.1.0",
     "sentence-transformers>=4.1.0",
     "torch>=2.7.0",

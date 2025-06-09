@@ -1,5 +1,6 @@
 # SWE-2025 팀플
 
+- `SRS`: [SRS_IEEE.pdf](/SRS_IEEE_template.pdf)
 - `Project`: [pyproject.toml](src/lib/server/pyproject.toml)
 - `Docker`: [Dockerfile](src/lib/server/Dockerfile)
 
@@ -7,26 +8,9 @@
 
 <video src="https://private-user-images.githubusercontent.com/75429815/452204880-53b99358-ee80-4b7d-ae6f-43259505e285.mp4?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDkxOTYyNTQsIm5iZiI6MTc0OTE5NTk1NCwicGF0aCI6Ii83NTQyOTgxNS80NTIyMDQ4ODAtNTNiOTkzNTgtZWU4MC00YjdkLWFlNmYtNDMyNTk1MDVlMjg1Lm1wND9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA2MDYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNjA2VDA3NDU1NFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWE1NzczNTQ1ZWU4MDI5MzhiMTc1MGQyZDkxZWY2YWExZTM3NmNiNzdkM2Y5ZTM3ZGM3NjJiNDQ1MWIxNjM3NTQmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.vzWe2B-QbTQOZE9RCtJdWNSrsV3rgPP-MtdBnFAyhtk" controls muted></video>
 
-![Prototype image](https://private-user-images.githubusercontent.com/75429815/452217856-12022e09-cc5c-4e01-bc3d-38ece850330a.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDkzNTUwOTUsIm5iZiI6MTc0OTM1NDc5NSwicGF0aCI6Ii83NTQyOTgxNS80NTIyMTc4NTYtMTIwMjJlMDktY2M1Yy00ZTAxLWJjM2QtMzhlY2U4NTAzMzBhLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA2MDglMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNjA4VDAzNTMxNVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWU1NWNiMWJmZGViZTE3Mjk3OWQ2ZWRlOWI5M2QxZGE1YzQ1ZjZmYzU4Njc2M2UyNGNlZjI0MmQ4NDY0NTU1MzQmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.9m3CLwbF_1rotnyCcbNUDS83UKetbOdgVGSRvBzViz8)
+![Prototype image](/static/prototype.png)
 
 > 이 프로젝트는 Apple Inc.에서 제공하는 Apple Design Resources를 기반으로 한 시각 자료를 포함하고 있습니다. 해당 자료는 Apple Design Resources License(2023년 6월 21일자)의 조건에 따라 교육 목적(학교 과제)으로만 사용되었으며, 사용자 인터페이스 목업 제작 용도로만 활용되었습니다.
-
-## SRS
-
-SRS: [SRS_IEEE_template](/SRS_IEEE_template.pdf)
-
-|항목|SRS|Prototype|
-|:---:|:---:|:---:|
-|SvelteKit|✅|✅|
-|Log-in|✅|❌|
-|Chat UI|✅|✅|
-|Card UI|✅|❌|
-|Table UI|✅|❌|
-|FastAPI|✅|✅|
-|Encoder|✅|✅|
-|Local LLM|✅|❌|
-|VectorDB|✅|✅|
-|Crawler|✅|❌|
 
 ## RUN
 
