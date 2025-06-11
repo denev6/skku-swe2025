@@ -1,4 +1,4 @@
-# SWE-2025 팀플
+# SWE-2025 팀프로젝트
 
 - `SRS`: [SRS_IEEE.pdf](/SRS_IEEE_template.pdf)
 - `Project`: [pyproject.toml](src/lib/server/pyproject.toml)
@@ -19,10 +19,9 @@
 먼저 [.env](src/lib/server/.env)를 수정합니다.
 
 ```sh
-$ cd src\lib\server           # 서버 파일 경로
-$ .venv\Scripts\Activate.ps1  # 가상환경 활성화
-$ python load_model.py        # 필요한 모델 준비
-$ uvicorn main:app --host=127.0.0.1 --port=8001 --reload  # 또는 Docker 사용
+$ cd src\lib\server               # 서버 파일 경로
+$ docker build -t my-app .        # docker 빌드
+$ docker run -p 8001:8001 my-app  # docker 실행
 ```
 
 ### Frontend
